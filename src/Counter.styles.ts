@@ -1,61 +1,63 @@
 import type {SxProps, Theme} from '@mui/material';
 
-export const boxStyles: SxProps = {
+const borderStyles = {
     border: '2px solid aqua',
     borderRadius: '5px',
+}
+
+export const boxStyles: SxProps<Theme> = {
+    ...borderStyles,
     width: '350px',
     height: '250px',
     display: 'flex',
     flexDirection: 'column',
     padding: '10px',
     gap: '10px',
+    color: 'aqua',
+    fontWeight: 'bold',
 }
 
 export const settingsWrapperStyles: SxProps<Theme> = {
+    ...borderStyles,
     height: '100%',
     flexDirection: 'column',
     gap: '10px',
-    borderRadius: '5px',
     display: 'flex',
-    border: '2px solid aqua',
     justifyContent: 'center',
     alignItems: 'center',
-    fontWeight: 'bold',
-    color: 'aqua',
 }
 
 export const buttonsWrapperStyles: SxProps<Theme> = {
+    ...borderStyles,
     height: '100px',
     gap: '50px',
-    border: '2px solid aqua',
-    borderRadius: '5px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    fontWeight: 'bold',
-    color: 'aqua'
 }
 
-export const countWrapperStyles: SxProps<Theme> = {height: '100%',
+export const countWrapperStyles: SxProps<Theme> = {
+    ...borderStyles,
+    height: '100%',
     fontSize: '64px',
-    border: '2px solid aqua',
-    borderRadius: '5px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    fontWeight: 'bold',
-    color: 'aqua'}
+}
 
-export const buttonStyles: SxProps = {
+export const buttonStyles: SxProps<Theme> = {
     height: '30px',
     backgroundColor: 'aqua',
     padding: '10px 10px 5px 10px',
     textTransform: 'none',
-    fontWeight: 'bold',
-    fontSize: '24px'
+    fontSize: '24px',
+    '&:hover': {
+        backgroundColor: '#00ffff',
+        opacity: 0.8
+    }
 }
 
-export const fieldStyles: SxProps = {
+export const fieldStyles: SxProps<Theme> = {
     width: '50%',
     backgroundColor: 'white',
     border: '1px solid aqua',
@@ -63,7 +65,7 @@ export const fieldStyles: SxProps = {
     marginLeft: '20px',
 }
 
-export const containerSx: SxProps = {
+export const containerSx: SxProps<Theme> = {
     display: 'flex',
     gap: '50px',
     height: '100vh',
