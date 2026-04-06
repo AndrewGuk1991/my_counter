@@ -2,7 +2,7 @@ import {Container} from "@mui/material"
 import './App.css'
 import {SettingsCounter} from "../SettingsCounter.tsx";
 import {Counter} from "../Counter.tsx";
-import {containerSx} from "../сounter.styles.ts";
+import {containerSx} from "../Counter.styles.ts";
 
 
 function App() {

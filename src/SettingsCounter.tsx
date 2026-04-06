@@ -1,23 +1,24 @@
 import {Box, Button, TextField} from "@mui/material";
-import {boxStyles, buttonStyles, fieldStyles, getCounterStyles} from "./сounter.styles.ts";
+import {boxStyles, buttonStyles, buttonsWrapperStyles, fieldStyles, settingsWrapperStyles} from "./Counter.styles.ts";
 import {useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {updateSettingsAC} from "./settingsReducer";
-import type {RootState} from "./app/store.ts";
+import {updateSettingsAC} from "./model/settingsReducer.ts";
+import {useAppSelector} from "./common/hooks/useAppSelector.ts";
+import {useAppDispatch} from "./common/hooks/useAppDispatch.ts";
+import {selectSettings} from "./model/settings-selectors.ts";
 
 
 export const SettingsCounter = () => {
-    const settings = useSelector((state: RootState) => state.settings)
+    const settings = useAppSelector(selectSettings)
     const [maxValue, setMaxValue] = useState(settings.maxValue);
     const [startValue, setStartValue] = useState(settings.startValue)
 
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch();
 
     const validSettings = maxValue > startValue
 
     return (
         <Box sx={boxStyles}>
-            <Box sx={getCounterStyles({height: '100%', flexDirection: 'column', gap: '10px'})}>
+            <Box sx={settingsWrapperStyles}>
                 <div>
                     max value:
                     <TextField
@@ -42,7 +43,7 @@ export const SettingsCounter = () => {
                 </div>
                 {!validSettings && <div style={{color: 'red'}}>enter valid settings</div>}
             </Box>
-            <Box sx={getCounterStyles({height: '100px'})}>
+            <Box sx={buttonsWrapperStyles}>
                 <Button
                     onClick={() => {
                         dispatch(updateSettingsAC({maxValue, startValue}))

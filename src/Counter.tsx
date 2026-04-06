@@ -1,11 +1,11 @@
 import {Box, Button} from "@mui/material";
-import {boxStyles, buttonStyles, getCounterStyles} from "./сounter.styles.ts";
+import {boxStyles, buttonStyles, buttonsWrapperStyles, countWrapperStyles} from "./Counter.styles.ts";
 import {useEffect, useState} from "react";
-import {useSelector} from "react-redux";
-import type {RootState} from "./app/store.ts";
+import {useAppSelector} from "./common/hooks/useAppSelector.ts";
+import {selectSettings} from "./model/settings-selectors.ts";
 
 export const Counter = () => {
-    const settings = useSelector((state: RootState) => state.settings);
+    const settings = useAppSelector(selectSettings)
     const [count, setCount] = useState(settings.startValue)
 
     useEffect(() => {
@@ -14,12 +14,12 @@ export const Counter = () => {
 
     return (
         <Box sx={boxStyles}>
-            <Box sx={getCounterStyles({height: '100%', fontSize: '64px'})}>
+            <Box sx={countWrapperStyles}>
                 <span
                     style={{color: count >= settings.maxValue ? "red" : ""}}
                 >{count}</span>
             </Box>
-            <Box sx={getCounterStyles({height: '100px', gap: '50px'})}>
+            <Box sx={buttonsWrapperStyles}>
                 <Button sx={buttonStyles}
                     onClick={() => setCount(count + 1)}
                         disabled={count >= settings.maxValue}

@@ -2,7 +2,7 @@ import {createAction, createReducer} from "@reduxjs/toolkit";
 
 export const updateSettingsAC = createAction<{startValue: number, maxValue: number}>('settings/updateSettings');
 
-const initialState = {
+const initialState: Settings = {
     startValue: 0,
     maxValue: 2
 }
@@ -14,3 +14,8 @@ export const settingsReducer = createReducer(initialState, builder => {
             state.maxValue = action.payload.maxValue
         })
 })
+
+export type Settings = {
+    startValue: number
+    maxValue: number
+}
