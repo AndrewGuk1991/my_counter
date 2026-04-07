@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import {useAppSelector} from "./common/hooks/useAppSelector.ts";
 import {selectSettings} from "./model/settings-selectors.ts";
 
-export const Counter = () => {
+export const Count = () => {
     const settings = useAppSelector(selectSettings)
     const [count, setCount] = useState(settings.startValue)
 

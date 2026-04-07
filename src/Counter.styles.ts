@@ -1,11 +1,12 @@
 import type {SxProps, Theme} from '@mui/material';
 
-const borderStyles = {
-    border: '2px solid aqua',
+const borderStyles: SxProps<Theme> = {
+    border: '2px solid',
+    borderColor: 'primary.main',
     borderRadius: '5px',
 }
 
-export const boxStyles: SxProps<Theme> = {
+export const boxStyles: SxProps<Theme> = (theme) =>( {
     ...borderStyles,
     width: '350px',
     height: '250px',
@@ -13,9 +14,9 @@ export const boxStyles: SxProps<Theme> = {
     flexDirection: 'column',
     padding: '10px',
     gap: '10px',
-    color: 'aqua',
+    color: theme.palette.primary.main,
     fontWeight: 'bold',
-}
+})
 
 export const settingsWrapperStyles: SxProps<Theme> = {
     ...borderStyles,
