@@ -21,7 +21,8 @@ export const Count = () => {
             </Box>
             <Box sx={buttonsWrapperStyles}>
                 <Button sx={buttonStyles}
-                    onClick={() => setCount(count + 1)}
+                        variant="contained"
+                        onClick={() => setCount(count + 1)}
                         disabled={count >= settings.maxValue}
                 >
                     inc
@@ -31,7 +32,8 @@ export const Count = () => {
                     onClick={() => {
                         setCount(settings.startValue)
                     }}
-                        disabled={count === settings.startValue}
+                    disabled={count === settings.startValue}
+                    variant="contained"
                 >
                     reset
                 </Button>

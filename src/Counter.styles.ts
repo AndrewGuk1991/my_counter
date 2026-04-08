@@ -16,6 +16,7 @@ export const boxStyles: SxProps<Theme> = (theme) =>( {
     gap: '10px',
     color: theme.palette.primary.main,
     fontWeight: 'bold',
+
 })
 
 export const settingsWrapperStyles: SxProps<Theme> = {
@@ -26,6 +27,7 @@ export const settingsWrapperStyles: SxProps<Theme> = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    padding: '0 20px'
 }
 
 export const buttonsWrapperStyles: SxProps<Theme> = {
@@ -46,25 +48,22 @@ export const countWrapperStyles: SxProps<Theme> = {
     alignItems: 'center',
 }
 
-export const buttonStyles: SxProps<Theme> = {
+export const buttonStyles: SxProps<Theme> = (theme) =>( {
     height: '30px',
-    backgroundColor: 'aqua',
+    backgroundColor: theme.palette.primary.main,
     padding: '10px 10px 5px 10px',
     textTransform: 'none',
     fontSize: '24px',
-    '&:hover': {
-        backgroundColor: '#00ffff',
-        opacity: 0.8
-    }
-}
+})
 
-export const fieldStyles: SxProps<Theme> = {
+export const fieldStyles: SxProps<Theme> = (theme) =>( {
     width: '50%',
-    backgroundColor: 'white',
-    border: '1px solid aqua',
+    backgroundColor: theme.palette.background.paper,
+    border: '1px solid',
     borderRadius: '5px',
+    borderColor: theme.palette.primary.main,
     marginLeft: '20px',
-}
+})
 
 export const containerSx: SxProps<Theme> = {
     display: 'flex',

@@ -45,6 +45,7 @@ export const SettingsCounter = () => {
             </Box>
             <Box sx={buttonsWrapperStyles}>
                 <Button
+                    variant="contained"
                     onClick={() => {
                         dispatch(updateSettingsAC({maxValue, startValue}))
                     }}

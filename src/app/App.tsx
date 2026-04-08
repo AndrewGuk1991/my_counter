@@ -1,15 +1,15 @@
 import {Container, createTheme, CssBaseline, ThemeProvider} from "@mui/material"
-import './App.css'
 import {SettingsCounter} from "../SettingsCounter.tsx";
 import {Count} from "../Count.tsx";
 import {containerSx} from "../Counter.styles.ts";
 import {useAppSelector} from "../common/hooks/useAppSelector.ts";
 import {selectThemeMode} from "./app-selectors.ts";
+import {Header} from "../Header.tsx";
 
 
-function App() {
+export const App = () => {
 
-    const themeMode = useAppSelector(selectThemeMode);
+    const themeMode = useAppSelector(selectThemeMode)
 
     const theme = createTheme({
         palette: {
@@ -22,6 +22,7 @@ function App() {
 
     return (
         <ThemeProvider theme={theme}>
+            <Header/>
             <CssBaseline/>
             <Container sx={containerSx}>
                 <SettingsCounter/>
@@ -31,4 +32,3 @@ function App() {
     )
 }
 
-export default App
