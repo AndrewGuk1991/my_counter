@@ -1,33 +1,25 @@
-import {Container, createTheme, CssBaseline, ThemeProvider} from "@mui/material"
-import {SettingsCounter} from "../SettingsCounter.tsx";
-import {Count} from "../Count.tsx";
-import {containerSx} from "../Counter.styles.ts";
+import {CssBaseline, ThemeProvider} from "@mui/material"
 import {useAppSelector} from "../common/hooks/useAppSelector.ts";
 import {selectThemeMode} from "./app-selectors.ts";
-import {Header} from "../Header.tsx";
+import {Header} from "../common/Header/Header.tsx";
+import "./App.css"
+import {Main} from "./Main.tsx";
+import {getTheme} from "../common/theme/theme.ts";
 
 
 export const App = () => {
 
     const themeMode = useAppSelector(selectThemeMode)
 
-    const theme = createTheme({
-        palette: {
-            mode: themeMode,
-            primary: {
-                main: '#087EA4',
-            }
-        }
-    })
+    const theme = getTheme(themeMode);
 
     return (
         <ThemeProvider theme={theme}>
-            <Header/>
-            <CssBaseline/>
-            <Container sx={containerSx}>
-                <SettingsCounter/>
-                <Count/>
-            </Container>
+            <div className={'app'}>
+                <Header/>
+                <CssBaseline/>
+                <Main/>
+            </div>
         </ThemeProvider>
     )
 }

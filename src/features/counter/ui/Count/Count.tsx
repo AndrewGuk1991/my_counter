@@ -1,8 +1,10 @@
 import {Box, Button} from "@mui/material";
-import {boxStyles, buttonStyles, buttonsWrapperStyles, countWrapperStyles} from "./Counter.styles.ts";
 import {useEffect, useState} from "react";
-import {useAppSelector} from "./common/hooks/useAppSelector.ts";
-import {selectSettings} from "./model/settings-selectors.ts";
+import {useAppSelector} from "../../../../common/hooks/useAppSelector.ts";
+import {selectSettings} from "../../model/settings-selectors.ts";
+import {boxStyles} from "../../../../common/styles/box.styles.ts";
+import {buttonStyles, buttonsWrapperStyles} from "../../../../common/styles/buttons.styles.ts";
+import {countWrapperStyles} from "./Count.styles.ts";
 
 export const Count = () => {
     const settings = useAppSelector(selectSettings)

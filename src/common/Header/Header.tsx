@@ -1,8 +1,8 @@
 import {AppBar, Container, Switch, Toolbar} from "@mui/material";
-import {changeModeAC} from "./app/appReducer.ts";
-import {useAppSelector} from "./common/hooks/useAppSelector.ts";
-import {selectThemeMode} from "./app/app-selectors.ts";
-import {useAppDispatch} from "./common/hooks/useAppDispatch.ts";
+import {changeModeAC} from "../../app/appReducer.ts";
+import {useAppSelector} from "../hooks/useAppSelector.ts";
+import {selectThemeMode} from "../../app/app-selectors.ts";
+import {useAppDispatch} from "../hooks/useAppDispatch.ts";
 
 export const Header = () => {
 
@@ -11,7 +11,7 @@ export const Header = () => {
     const dispatch = useAppDispatch();
 
     return (
-        <AppBar>
+        <AppBar position="static">
             <Container>
                 <Toolbar sx={{ display: 'flex', justifyContent: 'flex-end'}}>
                     <Switch

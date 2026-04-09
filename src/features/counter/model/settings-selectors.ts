@@ -1,4 +1,4 @@
-import type {RootState} from "../app/store.ts";
+import type {RootState} from "../../../app/store.ts";
 import type {Settings} from "./settingsReducer.ts";
 
 

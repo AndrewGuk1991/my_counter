@@ -1,10 +1,12 @@
 import {Box, Button, TextField} from "@mui/material";
-import {boxStyles, buttonStyles, buttonsWrapperStyles, fieldStyles, settingsWrapperStyles} from "./Counter.styles.ts";
+import {fieldStyles, settingsWrapperStyles} from "./SettingsCounter.styles.ts";
 import {useState} from "react";
-import {updateSettingsAC} from "./model/settingsReducer.ts";
-import {useAppSelector} from "./common/hooks/useAppSelector.ts";
-import {useAppDispatch} from "./common/hooks/useAppDispatch.ts";
-import {selectSettings} from "./model/settings-selectors.ts";
+import {updateSettingsAC} from "../../model/settingsReducer.ts";
+import {useAppSelector} from "../../../../common/hooks/useAppSelector.ts";
+import {useAppDispatch} from "../../../../common/hooks/useAppDispatch.ts";
+import {selectSettings} from "../../model/settings-selectors.ts";
+import {boxStyles} from "../../../../common/styles/box.styles.ts";
+import {buttonStyles, buttonsWrapperStyles} from "../../../../common/styles/buttons.styles.ts";
 
 
 export const SettingsCounter = () => {
