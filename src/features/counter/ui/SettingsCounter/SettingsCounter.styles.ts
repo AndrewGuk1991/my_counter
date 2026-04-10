@@ -1,9 +1,9 @@
 import type {SxProps, Theme} from '@mui/material';
+import {borderStyles} from "@/common/styles/border.styles.ts";
+
 
 export const settingsWrapperStyles: SxProps<Theme> = {
-    border: '2px solid',
-    borderColor: 'primary.main',
-    borderRadius: '5px',
+    ...borderStyles,
     height: '100%',
     flexDirection: 'column',
     gap: '10px',
@@ -17,8 +17,6 @@ export const settingsWrapperStyles: SxProps<Theme> = {
 export const fieldStyles: SxProps<Theme> = (theme) =>( {
     width: '50%',
     backgroundColor: theme.palette.background.paper,
-    border: '1px solid',
-    borderRadius: '5px',
-    borderColor: theme.palette.primary.main,
+    ...borderStyles,
     marginLeft: '20px',
 })

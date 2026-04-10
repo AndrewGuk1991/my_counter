@@ -1,12 +1,12 @@
 import {Box, Button, TextField} from "@mui/material";
 import {fieldStyles, settingsWrapperStyles} from "./SettingsCounter.styles.ts";
 import {useState} from "react";
-import {updateSettingsAC} from "../../model/settingsReducer.ts";
-import {useAppSelector} from "../../../../common/hooks/useAppSelector.ts";
-import {useAppDispatch} from "../../../../common/hooks/useAppDispatch.ts";
-import {selectSettings} from "../../model/settings-selectors.ts";
-import {boxStyles} from "../../../../common/styles/box.styles.ts";
-import {buttonStyles, buttonsWrapperStyles} from "../../../../common/styles/buttons.styles.ts";
+import {useAppSelector} from "@/common/hooks/useAppSelector.ts";
+import {selectSettings} from "@/features/counter/model/settings-selectors.ts";
+import {useAppDispatch} from "@/common/hooks/useAppDispatch.ts";
+import {boxStyles} from "@/common/styles/box.styles.ts";
+import {buttonStyles, buttonsWrapperStyles} from "@/common/styles/buttons.styles.ts";
+import {updateSettingsAC} from "@/features/counter/model/settingsReducer.ts";
 
 
 export const SettingsCounter = () => {
@@ -30,7 +30,9 @@ export const SettingsCounter = () => {
                         }}
                         type='number'
                         size={'small'}
-                        sx={fieldStyles}/>
+                        sx={fieldStyles}
+                        error={!validSettings}
+                    />
                 </div>
                 <div>
                     start value:
@@ -41,7 +43,9 @@ export const SettingsCounter = () => {
                         }}
                         size={'small'}
                         type='number'
-                        sx={fieldStyles}/>
+                        sx={fieldStyles}
+                        error={!validSettings}
+                    />
                 </div>
                 {!validSettings && <div style={{color: 'red'}}>enter valid settings</div>}
             </Box>

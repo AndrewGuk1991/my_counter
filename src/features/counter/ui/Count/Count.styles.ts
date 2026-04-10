@@ -1,9 +1,8 @@
 import type {SxProps, Theme} from "@mui/material";
+import {borderStyles} from "../../../../common/styles/border.styles.ts";
 
 export const countWrapperStyles: SxProps<Theme> = {
-    border: '2px solid',
-    borderColor: 'primary.main',
-    borderRadius: '5px',
+    ...borderStyles,
     height: '100%',
     fontSize: '64px',
     display: 'flex',

@@ -1,12 +1,7 @@
 import type {SxProps, Theme} from "@mui/material";
+import {borderStyles} from "./border.styles.ts";
 
-const borderStyles: SxProps<Theme> = {
-    border: '2px solid',
-    borderColor: 'primary.main',
-    borderRadius: '5px',
-}
-
-export const boxStyles: SxProps<Theme> = (theme) =>( {
+export const boxStyles: SxProps<Theme> = (theme) => ({
     ...borderStyles,
     width: '350px',
     height: '250px',
@@ -17,3 +12,4 @@ export const boxStyles: SxProps<Theme> = (theme) =>( {
     color: theme.palette.primary.main,
     fontWeight: 'bold',
 })
+

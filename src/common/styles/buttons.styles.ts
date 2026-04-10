@@ -1,9 +1,8 @@
 import type {SxProps, Theme} from "@mui/material";
+import {borderStyles} from "./border.styles.ts";
 
 export const buttonsWrapperStyles: SxProps<Theme> = {
-    border: '2px solid',
-    borderColor: 'primary.main',
-    borderRadius: '5px',
+    ...borderStyles,
     height: '100px',
     gap: '50px',
     display: 'flex',
