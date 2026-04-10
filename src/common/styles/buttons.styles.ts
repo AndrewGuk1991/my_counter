@@ -3,7 +3,7 @@ import {borderStyles} from "./border.styles.ts";
 
 export const buttonsWrapperStyles: SxProps<Theme> = {
     ...borderStyles,
-    height: '100px',
+    height: '120px',
     gap: '50px',
     display: 'flex',
     justifyContent: 'center',
@@ -11,9 +11,9 @@ export const buttonsWrapperStyles: SxProps<Theme> = {
 }
 
 export const buttonStyles: SxProps<Theme> = (theme) =>( {
-    height: '30px',
+    height: '40px',
     backgroundColor: theme.palette.primary.main,
-    padding: '10px 10px 5px 10px',
+    padding: '10px 10px 10px 10px',
     textTransform: 'none',
-    fontSize: '24px',
+    fontSize: '28px',
 })

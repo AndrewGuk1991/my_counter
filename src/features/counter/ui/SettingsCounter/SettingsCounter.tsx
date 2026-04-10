@@ -1,4 +1,4 @@
-import {Box, Button, TextField} from "@mui/material";
+import {Box, Button, Fade, TextField, Typography} from "@mui/material";
 import {fieldStyles, settingsWrapperStyles} from "./SettingsCounter.styles.ts";
 import {useState} from "react";
 import {useAppSelector} from "@/common/hooks/useAppSelector.ts";
@@ -21,7 +21,7 @@ export const SettingsCounter = () => {
     return (
         <Box sx={boxStyles}>
             <Box sx={settingsWrapperStyles}>
-                <div>
+                <div className={'textFieldWrapper'}>
                     max value:
                     <TextField
                         value={maxValue}
@@ -30,11 +30,11 @@ export const SettingsCounter = () => {
                         }}
                         type='number'
                         size={'small'}
-                        sx={fieldStyles}
+                        sx={fieldStyles(!validSettings)}
                         error={!validSettings}
                     />
                 </div>
-                <div>
+                <div className={'textFieldWrapper'}>
                     start value:
                     <TextField
                         value={startValue}
@@ -43,11 +43,17 @@ export const SettingsCounter = () => {
                         }}
                         size={'small'}
                         type='number'
-                        sx={fieldStyles}
+                        sx={fieldStyles(!validSettings)}
                         error={!validSettings}
                     />
                 </div>
-                {!validSettings && <div style={{color: 'red'}}>enter valid settings</div>}
+                {!validSettings && (
+                    <Fade in={!validSettings} timeout={500}>
+                        <Typography className="errorMessage" color="error">
+                            enter valid settings
+                        </Typography>
+                    </Fade>
+                )}
             </Box>
             <Box sx={buttonsWrapperStyles}>
                 <Button
