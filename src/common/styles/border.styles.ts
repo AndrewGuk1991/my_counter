@@ -1,4 +1,3 @@
-
 import type { SystemStyleObject } from "@mui/system";
 import type {Theme} from "@mui/material";
 

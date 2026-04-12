@@ -1,4 +1,3 @@
-
 import {createTheme} from "@mui/material";
 import type {ThemeMode} from "@/app/appReducer.ts";
 

@@ -1,8 +1,8 @@
 import {AppBar, Container, Switch, Toolbar} from "@mui/material";
-import {changeModeAC} from "../../app/appReducer.ts";
-import {useAppSelector} from "../hooks/useAppSelector.ts";
-import {selectThemeMode} from "../../app/app-selectors.ts";
-import {useAppDispatch} from "../hooks/useAppDispatch.ts";
+import {useAppSelector} from "@/common/hooks/useAppSelector.ts";
+import {selectThemeMode} from "@/app/app-selectors.ts";
+import {useAppDispatch} from "@/common/hooks/useAppDispatch.ts";
+import {changeModeAC} from "@/app/appReducer.ts";
 
 export const Header = () => {
 

@@ -1,6 +1,7 @@
 import {combineReducers, configureStore} from '@reduxjs/toolkit'
-import {settingsReducer} from "../features/counter/model/settingsReducer.ts";
-import {appReducer} from "./appReducer.ts";
+import {settingsReducer} from "@/features/counter/model/settingsReducer.ts";
+import {appReducer} from "@/app/appReducer.ts";
+
 
 const rootReducer = combineReducers({
     settings: settingsReducer,
